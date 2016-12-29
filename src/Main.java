@@ -20,8 +20,12 @@ public class Main {
         String w821 = "http://testlink.dins.ru/lib/results/resultsByTesterPerBuild.php?format=0&tplan_id=2047660";
         String w822 = "http://testlink.dins.ru/lib/results/resultsByTesterPerBuild.php?format=0&tplan_id=2062366";
         String w831 = "http://testlink.dins.ru/lib/results/resultsByTesterPerBuild.php?format=0&tplan_id=2114533";
-/*
-        testLinkProject.goToResult(w811);
+
+
+        String r901 = "http://testlink.dins.ru/lib/results/resultsByTesterPerBuild.php?format=0&tplan_id=2269845";
+        String w901 = "http://testlink.dins.ru/lib/results/resultsByTesterPerBuild.php?format=0&tplan_id=2269717";
+
+       /* testLinkProject.goToResult(w811);
         List<Employee> mapWOneOne = testLinkProject.grab();
 
         testLinkProject.goToResult(w812);
@@ -49,21 +53,27 @@ public class Main {
         List<Employee> mapTwoTwo = testLinkProject.grab();
 
         testLinkProject.goToResult(rc821);
-        List<Employee> mapTwoOne = testLinkProject.grab();
+        List<Employee> mapTwoOne = testLinkProject.grab();*/
+
+        testLinkProject.goToResult(w901);
+        List<Employee> mapW = testLinkProject.grab();
+
+        testLinkProject.goToResult(r901);
+        List<Employee> mapR = testLinkProject.grab();
 
 
-        List<Employee> finaleList = sumList(mapWOneTwo,mapWOneOne,mapWTwoOne,mapWTwoTwo,mapWThreeOne,mapThreeOne,mapTwoTwo,mapTwoOne,mapOneOne,mapOneTwo);
+        List<Employee> finaleList = sumList(mapW,mapR);
         System.out.println("STOP");
-*/
-        Employee[] nameArray = {new Employee("dima.shlomin",0)};
-        String[] nameArray2 = {
+
+       // Employee[] nameArray = {new Employee("dima.shlomin",0)};
+        String[] nameArray = {
                 "alexey.kudlaenko","sergei.demyanenko","mykhailo.somov","viktoria.strahova","sergey.shamshurin","svyatoslav.polozov","norman.kalyuzhny",
                 "sergey.visotskiy","veronika.genkinova","stanislav.gurushchuk",
                 "sergey.kharchenko","roman.gavriluk","leonid.haidanov",
                 "yulia.samorokovskaya","dima.shlomin","olha.mudrak","vladimir.tishchenko",
                 "kirill.khrinenko","pavel.polskiy","oleksii.gych","oleksandr.frolov","dmitriy.rumelets","lidiia.borisenko","alexander.gorb","alexey.katelin",
                 "sergiy.alyeksyeyenko"};
-        String[] nameArray1 = {"leonid.haidanov","svyatoslav.polozov"};
+
        /* String[] nameArray = {"alexander.rozdorojny","Alexander.Zudenko","alexandr.kononenko","andrey.ignatenko",
                 "artem.demeshkevich","arthur.bratikov", "dmytro.zagorodnjuk","dmitriy.dzyuba","dmitry.ternovoy",
                 "elena.yeremenko","kirill.ivanov","lena.kakovkina","mariia.malinovska","maxim.kolesnik",
@@ -73,7 +83,7 @@ public class Main {
         LoginPage page = new LoginPage();
         LoginPage requestPage = page.login().search();
         System.out.println("|Name| "+"|ALL Test Cases| "+"|All good bug| "+"|Low| "+"|Normal| "+"|High| "+"|Critical| "+"|Incident| "+"|Not a bug|");
-        for(Employee employee: nameArray){
+        for(Employee employee: finaleList){
             printAnswer(requestPage.sandRequest(employee));
             System.out.println();
         }

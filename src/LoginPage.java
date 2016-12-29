@@ -28,7 +28,7 @@ public class LoginPage extends Page {
     String newSearchPath = "//*[@id=\"advanced-search\"]";
     String newSearchAnswer = "//*[@id=\"content\"]/div[1]/div[4]/div/div/div/div/div/div/div[1]/div[1]/span/span[3]";
     public User sandRequest(Employee employee){
-        String startDate = " and created >= \"2016/02/01\" ";
+        String startDate = " and created >= \"2016/12/14\" ";
         String requestBody = " AND resolution in (\"Fixed\", \"Won't Fix\", \"Completed\",\"Unresolved\") AND type in (\"Bug\")";
         String low = "and priority = Low";
         String normal = "and priority = Normal";

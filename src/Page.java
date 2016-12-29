@@ -9,7 +9,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
  */
 public class Page {
     protected String logName = "sergei.demyanenko";
-    protected String logPassword =" ";
+    protected String logPassword ="Erlond+85!";
     public WebDriver wd = new ChromeDriver();
     public int implicitlyWait = 120;
     private void waiting(By selector) {

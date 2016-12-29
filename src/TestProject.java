@@ -25,7 +25,7 @@ public class TestProject extends Page{
         wd.get(urlToTestLink);
         wd.manage().window().maximize();
         fillFormByXpath(loginSelector,logName);
-        fillFormByXpath(passwordSelector,logPassword);
+        fillFormByXpath(passwordSelector,"McLaud85");
         clickButtonByXpath(loginButton);
         return this;
     }
